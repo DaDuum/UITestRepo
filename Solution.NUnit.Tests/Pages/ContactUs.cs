@@ -76,7 +76,7 @@ namespace Solution.NUnit.Tests.Sections
             }
         }
 
-        public void FilldatafromCsv()
+        public void FillDataFromCsv()
         {
             string filePath = @"C:\Users\Admin\source\repos\NUnit.Tests\Solution.NUnit.Tests\Inputs\inputs.csv";
             List<string> data = new List<string>();

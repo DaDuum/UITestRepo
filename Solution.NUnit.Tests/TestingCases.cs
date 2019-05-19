@@ -49,7 +49,7 @@ namespace Solution.NUnit.Tests
         {
             Pages.contactUs.GoTo();
             Assert.IsTrue(Pages.contactUs.IsAt());
-            Pages.contactUs.FilldatafromCsv();
+            Pages.contactUs.FillDataFromCsv();
         }
 
         [Test]
@@ -63,8 +63,7 @@ namespace Solution.NUnit.Tests
         public void Test_InvalidLogin()
         {
             ClickLogin();
-            //IWebElement link = Browsers.getDriver.FindElement(By.PartialLinkText("Prihlásenie do osobnej administratívy UIS"));
-            //link.Click();
+
             Browsers.getDriver.FindElement(By.Id("credential_0")).SendKeys("dummyUser");
             Browsers.getDriver.FindElement(By.Id("credential_1")).SendKeys("dummyPassword");
             Browsers.getDriver.FindElement(By.Id("login-btn")).Submit();
