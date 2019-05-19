@@ -55,5 +55,10 @@ namespace Solution.NUnit.Tests
         {
             webDriver.Quit();
         }
+
+        public static void NavigateTo(string url)
+        {
+            webDriver.Navigate().GoToUrl(url);
+        }
     }
 }

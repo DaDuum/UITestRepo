@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Solution.NUnit.Tests.Sections
 {
-    public class ContactUs
+    public class ContactUs : IPages
     {
         [FindsBy(How = How.Name, Using = "your-name")]
         private IWebElement yourName;
@@ -23,19 +23,26 @@ namespace Solution.NUnit.Tests.Sections
         [FindsBy(How = How.XPath, Using = "//input[@type='submit']")]
         private IWebElement submit;
 
-        [FindsBy(How = How.ClassName, Using = "wpcf7-response-output")]
+        [FindsBy(How = How.ClassName, Using = "")]
         private IWebElement SuccMessage;
 
-        [FindsBy(How = How.Id, Using = "menu-item-1296")]
+        [FindsBy(How = How.Id, Using = "")]
         private IWebElement contactUs;
 
-        public bool isAt()
+        public bool IsAt()
         {
             return Browsers.Title.Contains("Contact Us");
         }
+
+        /// Implement for : https://is.paneurouni.com/prihlaska/dotaz.pl?sekce=10;zpet=/prihlaska/zaloz_eosobu.pl?fakulta=40;;lang=sk
+
         public void GoTo()
         {
             contactUs.Click();
+        }
+        // TODO : unified function for sending items without exposing details .. 
+        public void SendItem(IWebElement item, string value) {
+            item.SendKeys(value);
         }
         public void SendYourName(string name)
         {
@@ -69,7 +76,7 @@ namespace Solution.NUnit.Tests.Sections
             }
         }
 
-        public void filldatafromCsv()
+        public void FilldatafromCsv()
         {
             string filePath = @"C:\Users\Admin\source\repos\NUnit.Tests\Solution.NUnit.Tests\Inputs\inputs.csv";
             List<string> data = new List<string>();

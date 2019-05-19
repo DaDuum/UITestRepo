@@ -20,5 +20,16 @@ namespace Solution.NUnit.Tests
         {
             get { return getPages<ContactUs>(); }
         }
+
+        public static LoginScreen loginScreen
+        {
+            get { return getPages<LoginScreen>(); }
+        }
+
+        public static RegistrationForm registrationForm
+        {
+            get { return getPages<RegistrationForm>(); }
+        }
+
     }
 }
