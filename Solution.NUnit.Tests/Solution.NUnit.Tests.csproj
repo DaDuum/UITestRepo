@@ -51,16 +51,24 @@
   <ItemGroup>
     <Compile Include="AutomationCore.cs" />
     <Compile Include="Browsers.cs" />
+    <Compile Include="General.cs" />
+    <Compile Include="Pages.cs" />
     <Compile Include="Reports.cs" />
-    <Compile Include="Sanity.cs" />
+    <Compile Include="ReportsManager.cs" />
+    <Compile Include="TestingCases.cs" />
+    <Compile Include="Sections\ContactUs.cs" />
+    <Compile Include="Servers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Inputs\" />
     <Folder Include="Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
